@@ -1,27 +1,22 @@
-function ListItem(props) {
-    return <li>{props.animal}</li>
-    }
-function List(props) {
+function Button(props) {
+    const buttonStyle = {
+      color: props.color,
+      fontSize: props.fontSize + 'px'
+    };
+  
     return (
-    <ul>
-        {props.animals.map((animal) => {
-        return <ListItem key={animal} animal={animal} />;
-        })}
-    </ul>
+      <button style={buttonStyle}>{props.text}</button>
     );
-}
-
+  }
 
 function Greeting() {
-    const animals = ["Lion", "Cow", "Snake", "Lizard"];
-    const animalsList = animals.map((animal) => <li key={animal}>{animal}</li>)
-
     return (
         <div>
-            <h1>Animals: </h1>
-            <List animals={animals} />
+          <Button text="Click Me!" color="blue" fontSize={12} />
+          <Button text="Don't Click Me!" color="red" fontSize={12} />
+          <Button text="Click Me!" color="blue" fontSize={20} />
         </div>
-    );
+      );
 }
 
 export default Greeting;
